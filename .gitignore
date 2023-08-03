@@ -1,0 +1,14 @@
+.env
+/venv/
+/results/*
+
+*.pyc
+*.egg-info
+
+# Если вы программируете на Mac
+.DS_Store
+
+*.iml
+
+/.idea
+

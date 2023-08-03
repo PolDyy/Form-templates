@@ -1,0 +1,6 @@
+# postgres
+POSTGRES_DB=form-templates
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=4789
+DB_HOST=0.0.0.0
+DB_PORT=5432

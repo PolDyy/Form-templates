@@ -1,0 +1,33 @@
+version: '3.9'
+
+volumes:
+  pgdata:
+    driver: local
+
+
+services:
+
+  pgadmin:
+    container_name: pgadmin-form
+    restart: always
+    image: dpage/pgadmin4:6.19
+    expose:
+      - 80
+    ports:
+      - "80:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=1234
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: postgres-form
+    image: postgres:15
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
